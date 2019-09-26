@@ -4,7 +4,7 @@ This app uses [Amazon Transcribe with AWS SDK for Python (Boto)](https://docs.aw
 
 ## Prerequisites
 
-- AWS account
+- AWS account, with an S3 bucket
 - An AWS access key and AWS secret access key. See [Creating Your First IAM Admin User and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) for more info.
 
 - To upload local files to S3 bucket, in your S3 bucket permissions you must allow
@@ -47,7 +47,10 @@ npm start
 
 ## Using the app
 
-The app displays a menu. Choose a transcription type (single or batch). `Single` transcribes a single audio file. `Batch` transcribes multiple audio files in a folder.
+- The app displays a menu
+- Choose a transcription type (single or batch)
+    - `Single` transcribes a single audio file 
+    - `Batch` transcribes multiple audio files in a folder and calculates averages of results
 
 - Single transcription
 

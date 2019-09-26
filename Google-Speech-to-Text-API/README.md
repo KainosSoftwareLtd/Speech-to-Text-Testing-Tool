@@ -48,7 +48,10 @@ in a terminal
 
 ## Using the app
 
-The app displays a menu. Choose a transcription type (single or batch). `Single` transcribes a single audio file. `Batch` transcribes multiple audio files in a folder and calculates averages of results.
+- The app displays a menu
+- Choose a transcription type (single or batch)
+    - `Single` transcribes a single audio file
+    - `Batch` transcribes multiple audio files in a folder and calculates averages of results
 
 - Single transcription
 

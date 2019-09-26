@@ -27,6 +27,7 @@ _Make sure the path to these files are correct in `settings.py` before running_
 - In each service's directory, there is a `results` folder and contains the following files:
   - `ref.txt`: stores the original transcript of the audio file you want to transcribe. Enter the original transcript before running the app
   - `hyp.txt`: result of the transcription is stored here once the app is run and transcription is generated
+  - `results.csv`: results are stored here once generated (transcripts, WER & word error count)
   - `table.txt`: WER and the word error count results are stored here
   - `alltranscriptions.txt`: all text that has been transcribed is stored here
 

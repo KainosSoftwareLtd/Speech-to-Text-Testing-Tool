@@ -40,7 +40,9 @@ Start the app with the command
 npm start
 ```
 
-The app displays a menu. Choose a transcription type. Then enter either filepath or folderpath, depending on which transcription type you selected.
+- The app displays a menu
+- Choose a transcription type
+- Enter either filepath or folderpath, depending on which transcription type you selected
 
 # General errors
 
