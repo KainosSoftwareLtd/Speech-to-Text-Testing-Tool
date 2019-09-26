@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "speech-to-text-testing-microsoft-speech-sdk",
+  "version": "1.0.0",
+  "description": "Automate tests on audio samples with Microsofts speech SDK on Python",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 main.py",
+    "setup": "python3 js/setENV.py && pip3 install -r requirements.txt && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Leyburn",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/speech": "^3.2.6",
+    "contractions": "0.0.7",
+    "csv-write-stream": "^2.0.0",
+    "csvtojson": "^2.0.10",
+    "num-words": "^1.0.1",
+    "remove-punctuation": "0.0.4",
+    "uuid": "^3.3.3",
+    "word-error-rate": "0.0.7"
+  }
+}

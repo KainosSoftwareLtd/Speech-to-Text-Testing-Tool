@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "speech-to-text-testing-amazon-transcribe",
+  "version": "1.0.0",
+  "description": "Automate tests on audio samples with Amazon Transcribe with AWS SDK on Python",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 main.py",
+    "setup": "npm install && pip3 install -r requirements.txt && brew install awscli",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transcribe": "python3 main.py",
+    "batch": "python3 main.py -b"
+  },
+  "author": "Matthew Leyburn",
+  "license": "MIT",
+  "dependencies": {
+    "contractions": "0.0.7",
+    "csv-write-stream": "^2.0.0",
+    "csvtojson": "^2.0.10",
+    "num-words": "^1.0.1",
+    "remove-punctuation": "0.0.4",
+    "uuid": "^3.3.3",
+    "word-error-rate": "0.0.7"
+  }
+}
