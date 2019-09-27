@@ -32,8 +32,9 @@ Qstyle = style_from_dict({
 })
 
 def main():
+    checkSettingsPaths()
     transcription_type = getTranscriptionType()
-    
+
     if transcription_type == 'batch' :
         runBatchTranscription()
         calcAverage()
@@ -43,6 +44,24 @@ def main():
         runSingleTranscription(audio_location)
     else:
         print('Error: Invalid transcription type')
+        sys.exit(0)
+        
+def checkSettingsPaths():
+    error_msg = 'Error: cannot find path to the following file/s:'
+    if (not(os.path.isfile(settings.HYP_PATH))):
+        error_msg = error_msg + "\n  - hyp.txt"
+    if (not(os.path.isfile(settings.REF_PATH))):
+        error_msg = error_msg + "\n  - ref.txt"
+    if (not(os.path.isfile(settings.RESULTS_TABLE_PATH))):
+        error_msg = error_msg + "\n  - table.txt"
+    if (not(os.path.isfile(settings.RESULTS_CSV_PATH))):
+        error_msg = error_msg + "\n  - results.csv"
+    if (not(os.path.isfile(settings.ALL_TRANCRIPTIONS_PATH))):
+        error_msg = error_msg + "\n  - allTranscriptions.txt"
+        
+    if(error_msg != 'Error: cannot find path to the following file/s:'):
+        error_msg = error_msg + '\nPlease update in settings.py to vaild filepaths\n'
+        print(error_msg)
         sys.exit(0)
         
 def runSingleTranscription(audio_location):
