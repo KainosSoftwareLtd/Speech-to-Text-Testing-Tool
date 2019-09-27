@@ -66,7 +66,8 @@ npm start
 
 - To use each tool, you will require an account with your service of choice. Each of the services are paid but all offer a free trial period
 - For each service, audio files are required to be in a specific format. Details of this can be found in each projects README
-- Both the original transcript (ref.txt) and the transcribed text (hyp.txt) are 'cleaned' to have consistent stylistic formats before WER is calculated. For example, digits like 1, 64 and 3000 are converted to their corresponding words: one, sixty-four and three thousand, respectively. Punctuation and unnecessary whitespace is also removed.
+- Both the original transcript (ref.txt) and the transcribed text (hyp.txt) are 'cleaned' to have consistent stylistic formats before WER is calculated. For example, digits like 1, 64 and 3000 are converted to their corresponding words: one, sixty-four and three thousand, respectively. Punctuation and unnecessary whitespace is also removed
+- You may have to change stylistic differences like "street" and "st" yourself to be consistent with transcription service
 
 * Find out more about this project and our findings in our [blog](https://medium.com/kainos-applied-innovation)
 

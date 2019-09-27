@@ -141,14 +141,21 @@ def getFilepath():
         print('Error: Please enter path to audio file')
         sys.exit(0)
     
-    file_path = answers['file_path']    
+    file_path = answers['file_path'] 
+    
+    if file_path == '':
+        print('Error: Please enter path to audio file')
+        sys.exit(0)
+    
+    if (file_path[0] == '/' or file_path[0] == '.'):    
+        file_path = file_path[1:]
+        if (file_path[0] == '/'):    
+            file_path = file_path[1:]
+            
+    file_path = file_path.strip()  
     
     if (not(os.path.isfile(file_path))):
         print("Error: Cannot find file")
-        sys.exit(0)
-        
-    if file_path == '':
-        print('Error: Please enter path to audio file')
         sys.exit(0)
     
     return file_path
@@ -198,13 +205,12 @@ def getFolderPath():
     
     folder_path = answers['folder_path']  
     
-    if (not(os.path.isdir(folder_path))):
-        print("Error: Cannot find folder")
-        sys.exit(0)
     if (folder_path[0] == '/' or folder_path[0] == '.'):    
         folder_path = folder_path[1:]
         if (folder_path[0] == '/'):    
             folder_path = folder_path[1:]
+    
+    folder_path = folder_path.strip()
     if (folder_path[len(folder_path)-1] != '/'):    
         folder_path = folder_path + '/'  
         
@@ -212,7 +218,11 @@ def getFolderPath():
         print('Error: Please enter path to local folder')
         sys.exit(0)
     
-    return folder_path
+    if (not(os.path.isdir(folder_path))):
+        print("Error: Cannot find folder")
+        sys.exit(0)
+    
+    return folder_path.strip()
 
 def getS3BucketName():
     question = [
@@ -262,6 +272,8 @@ def getS3BucketFilePath():
         print('Error: Please enter path to S3 bucket file')
         sys.exit(0)
         
+    checkS3FileExists(s3_bucket_file_path)
+        
     return s3_bucket_file_path
 
 def getS3FilePath(s3_bucket_path, job_file):
@@ -272,8 +284,15 @@ def getS3FilePath(s3_bucket_path, job_file):
 def checkS3BucketExists(s3_bucket_path):
     try:
         s3bucket.meta.client.head_bucket(Bucket=s3_bucket_path)
-    except (ClientError) as e:
-        print('\n' + e)
+    except ClientError as e:
+        print('\n' + str(e) + '\n' + s3_bucket_path + ' can not be found. Please enter a valid S3 bucket (s3://<YourS3BucketName>)')
+        sys.exit(0)
+
+def checkS3FileExists(s3_bucket_path):
+    try:
+        s3bucket.meta.client.head_bucket(Bucket=s3_bucket_path)
+    except ClientError as e:
+        print('\n' + str(e) + '\n' + s3_bucket_path + ' can not be found. Please enter a valid S3 bucket (s3://<YourS3BucketName>/<PathToFile>)')
         sys.exit(0)
         
 def checkVaildFileFormat(job_file):
