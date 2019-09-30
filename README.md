@@ -77,7 +77,8 @@ npm start
 
 ## Disclaimer
 
-This project was developed using: 
+This project was developed using:
+
 - python 3.7.4, python modules version as described in `requirements.txt` 
 - Node js v10.16.0, npm packages as described in `package.json`
 
