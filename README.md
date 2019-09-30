@@ -48,19 +48,20 @@ Each app supports single and batch processing. With batch, an average of results
 3. Gather audio samples. I recommend creating a `sounds` folder and placing audio files there
 4. Install all required dependencies by executing
 
-```sh
-npm run setup
-```
+    ```sh
+    npm run setup
+    ```
 
 5. Run each app by executing
 
-```sh
-npm start
-```
+    ```sh
+    npm start
+    ```
 
 6. Analyse results (table.txt & results.csv)
 
-> _Further info can be found in each app's README's_
+
+> _Further info can be found in each services README's_
 
 ## General Info
 
